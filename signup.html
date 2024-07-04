@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Via_Bankz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/93483deb2b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="signup.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+<body>
+    <div class="all">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        width="498.23px" height="644px" viewBox="0 0 620.23 789.73"
+        style="overflow:visible;enable-background:new 0 0 498.23 789.73;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#54baac;stroke-miterlimit:10;}
+            </style>
+            <defs>
+            </defs>
+            <path class="st0" d="M0.53,4.53c9.39,40.84,31.33,93.6,63.26,149.57c63.83,111.86,158.8,176.21,184.35,193.04
+                c67.99,44.8,100.84,45.86,150.43,100c34.18,37.31,53.95,75.42,64.35,99.13c28.33,64.62,31.36,123.42,33.91,173.04
+                c1.48,28.76,0.88,52.85,0,69.91H5.53L0.53,4.53z"/>
+        </svg>
+        <div class="container">
+            <div class="img">
+                <img src="./images/undraw_profile_data_re_v81r.svg" alt="">
+            </div>
+            <div class="login-container">
+                <form id="signup-form" action="account.php"> 
+                    <div class="koo">
+                        <img class="avatar" src="./images/undraw_pic_profile_re_7g2h (1).svg" alt="">
+                        <h2>Welcome</h2>
+                    </div>
+                    <div class="input-div">
+                        <button type="button" id="connect-wallet-btn">Connect wallet</button>
+                    </div>
+                    <div class="ada">
+                        <label for="account-number">Your account number</label>
+                        <input type="text" id="account-number" name="account-number" placeholder="Wallet address" readonly>
+                    </div>
+                    <input type="submit" id="signup-btn" class="btn mt-5" value="Signup" disabled> 
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const connectWalletBtn = document.getElementById("connect-wallet-btn");
+            const accountNumberInput = document.getElementById("account-number");
+
+            connectWalletBtn.addEventListener("click", async () => {
+                if (typeof window.ethereum !== 'undefined') {
+                    try {
+                        await window.ethereum.request({ method: 'eth_requestAccounts' });
+                        const web3 = new Web3(window.ethereum);
+                        const accounts = await web3.eth.getAccounts();
+                        const walletAddress = accounts[0];
+                        accountNumberInput.value = walletAddress;
+                        localStorage.setItem('walletAddress', walletAddress); // Store wallet address in localStorage
+                        document.getElementById('signup-btn').disabled = false; // Enable signup button
+                    } catch (error) {
+                        console.error("User denied account access", error);
+                    }
+                } else {
+                    alert("Please install MetaMask!");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

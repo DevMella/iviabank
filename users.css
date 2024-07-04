@@ -1,0 +1,305 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace !important;
+}.body{
+    width: 100%;
+    padding-top: 60px;
+}
+.logo{
+    width: 65px;
+}
+.logo img{
+    width: 100%;
+}
+.top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px 15px 20px;
+    position: fixed;
+    z-index: 100;
+    align-items: center;
+    background-color: #e9ecec;
+}
+.cir img{
+    width: 35px;
+    border-radius: 50%;
+    height: 35px;
+}
+.tip p{
+    word-wrap: break-word; 
+    word-break: break-all; 
+}
+.side{
+    width: 8%;
+    padding: 0px 20px 60px 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e9ecec;
+}
+.sec{
+    padding-top: 30px;
+}
+.sec a{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.fir i{
+    font-size: 20px;
+}
+.fir a i{
+    color: black;
+}
+.sec a p{
+    font-size: 13px;
+}
+.main-body{
+    width: 92%;
+    margin-left: 100px;
+    padding: 50px 30px 30px 30px;
+}
+.wel{
+    background-color: #54baac;
+    color: white;
+    padding: 25px 15px 15px 15px;
+    border-radius: 10px;
+}
+.ava{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.ava i{
+    margin-top: -15px;
+    font-size: 14px;
+}
+.fa-eye, .fa-eye-slash {
+    cursor: pointer;
+}
+.balance {
+    margin-top: -10px;
+}
+.copy-message {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+}
+.gal{
+    gap: 160px;
+}
+.gal h2{
+    font-weight: 800;
+}
+.wel{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 180px;
+}
+.qr-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.qr-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+video {
+    width: 300px;
+    height: 300px;
+}
+.copy-icon {
+    cursor: pointer;
+    margin-right: 8px;
+    color: #54baac;
+}
+.success-message {
+    color: green;
+    margin-top: 8px;
+}
+.olo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#close-modal{
+    border: none;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    color: white;
+}
+.jah{
+    display: flex;
+    justify-content: end;
+}
+.qr-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.qr-popup img {
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+}
+.qr-popup .close-btn {
+    cursor: pointer;
+    color: red;
+    font-size: 1.5rem;
+}
+.wens{
+    box-shadow: #63636333 0px 1px 4px 0px;
+    border-radius: 10px;
+    padding: 15px 15px 10px 15px;
+}
+.wen h6,.wens h5{
+    font-weight: 600;
+    word-wrap: break-word; 
+    word-break: break-all; 
+}
+.try a{
+    text-decoration: none;
+    color: black;
+}
+.wens h6{
+    font-weight: 400;
+}
+    .icons{
+    background-color: #54baac;
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    }
+    .gal i{
+    font-size: 40px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    }
+    .icons a{
+        text-decoration: none;
+        color: white;
+    }
+    .tip p{
+        word-wrap: break-word !important; 
+        word-break: break-all !important; 
+    }
+    .sec{
+    padding-top: 26px;
+    }
+    .cir{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    }
+    .cir span{
+        font-size: 30px;
+        color: #54baac;
+    }
+    .cir i{
+        font-size: 25px;
+        color: #54baac;
+    }
+    .man{
+    background-color: #d8e9e7;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #54baac;
+    }
+    .foo h6{
+        margin-top: 3px;
+    }
+    .try a,.fol{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .ban{
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        background-color: #d8e9e7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .wene i{
+        color: #54baac;
+    }
+    .wens a{
+        text-decoration: none;
+        color: black;
+        margin-top: 20px !important;
+    }
+    .notification-icon {
+        position: relative;
+        cursor: pointer;
+        margin-top: -10px !important;
+        margin-right: 20px !important;
+    }
+    .notification-dot {
+        position: absolute;
+        top: 25px;
+        right: 33px;
+        width: 13px;
+        height: 13px;
+        background-color: red;
+        border-radius: 50%;
+        display: none;
+    }
+@media (max-width:764px) {
+    .main-body{
+        width: 100%;
+        margin-left: 0px;
+        padding: 50px 30px 120px 30px !important;
+    }
+    .wel{
+        height: 170px;
+    }
+    .side{ 
+        display: none !important; 
+    }
+    .all{
+        overflow: hidden;
+    }
+    .gal{
+        gap: 0px;
+        justify-content: space-between;
+    }
+    .gal i{
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+}

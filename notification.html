@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/93483deb2b.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="notification.css">
+</head>
+<style>
+.ate {
+    margin-right: 0px !important;
+    margin-top: -10px !important;    
+}
+  .phi h5{
+    font-size: 17px;
+  }
+  .main-body{
+    width: 100%;
+  }
+  .you i{
+    font-size: 23px;
+    color: #54baac;
+    font-weight: 600;
+  }
+</style>
+<body>
+    <div class="skeleton">
+        <div class=" g-0 row ">
+            <div class="col-lg-10  justify-content-right col-12 main">
+                <div class="body">
+                  <div class="main-body">
+                    <div class="notification-container">
+                        <div class="d-flex align-items-center justify-content-between you">
+                            <div class="d-flex flex-column">
+                                <a href="dashboard.php">
+                                  <i class="bi bi-arrow-left"></i>
+                                </a>
+                              <div class="notification-heading d-flex gap-2">
+                                  Notifications
+                                  <div class="unread-count d-flex align-items-center justify-content-center" id="unreadCount">2</div>
+                              </div>
+                            </div>
+                            <div class="mark-as-read" onclick="markAllAsRead()">Mark all as read</div>
+                        </div>
+                        <div class="notification unread mt-4" onclick="toggleNotificationDetails(this, 2)">
+                            <div class="notification-content">
+                              <img src="./images/default-monochrome-black.svg" width="60" height="30" style="margin-right: 10px;" alt="" crossorigin="anonymous">
+                                <span>Your transfer was successful to ....</span> 
+                            </div>
+                            <span class="notification-status"></span>
+                            <div class="notification-details">
+                                <p>Your transfer of #3,000 to <span>shola allyson</span> was successful.</p>
+                            </div>
+                        </div>
+
+                        <div class="notification unread mt-4" onclick="toggleNotificationDetails(this, 2)">
+                            <div class="notification-content">
+                              <img src="./images/default-monochrome-black.svg" width="60" height="30" style="margin-right: 10px;" alt="" crossorigin="anonymous">
+                                <span>Credit Alert From .....</span>
+                            </div>
+                            <span class="notification-status"></span>
+                            <div class="notification-details">
+                                <p>You have just received #3,000.00 from  <span> adebola alaba adesanya </span></p>
+                            </div>
+                        </div>
+
+                        <div class="notification unread mt-4" onclick="toggleNotificationDetails(this, 2)">
+                            <div class="notification-content">
+                              <img src="./images/default-monochrome-black.svg" width="60" height="30" style="margin-right: 10px;" alt="" crossorigin="anonymous"> <span>Your transfer was successful to ...</span>
+                            </div>
+                            <span class="notification-status"></span>
+                            <div class="notification-details">
+                                <p>Your transfer of #510.00 to <span>Adeniyi elijah</span> was successful.</p>
+                            </div>
+                        </div>
+
+                        <div class="notification mt-4" onclick="toggleNotificationDetails(this, 1)">
+                            <div class="notification-content">
+                              <img src="./images/default-monochrome-black.svg" width="60" height="30" style="margin-right: 10px;" alt="" crossorigin="anonymous">
+                                <span>Debit Alert</span>
+                            </div>
+                            <span class="notification-status"></span>
+                            <div class="notification-details">
+                                <p>Your account was debited #600.00 for <span>airtime purchase to</span> 08159961994 <span>Mtn</span></p>
+                            </div>
+                        </div>
+
+                        <div class="notification mt-4" onclick="toggleNotificationDetails(this, 1)">
+                          <div class="notification-content">
+                            <img src="./images/default-monochrome-black.svg" width="60" height="30" style="margin-right: 10px;" alt="" crossorigin="anonymous">
+                              <span>Debit Alert</span>
+                          </div>
+                          <span class="notification-status"></span>
+                          <div class="notification-details">
+                              <p>Your account was debited #200.00 for <span>airtime purchase to</span> 08159961994 <span>glo 1gb</span></p>
+                          </div>
+                      </div>
+
+                        <div class="notification mt-4" onclick="toggleNotificationDetails(this, 1)">
+                            <div class="notification-content">
+                              <img src="./images/default-monochrome-black.svg" width="60" height="30" style="margin-right: 10px;" alt="" crossorigin="anonymous"><span>Credit Alert From .....😍</span> 
+                            </div>
+                            <span class="notification-status"></span>
+                            <div class="notification-details">
+                              <p>You have just received #4,000.00 from  <span>marvellous alaba adesanya </span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+
+
+
+<script>
+    let openNotification = null;
+
+    function markAllAsRead() {
+        const unreadNotifications = document.querySelectorAll('.notification.unread');
+        unreadNotifications.forEach(notification => {
+            notification.classList.remove('unread');
+            const notificationId = notification.dataset.id;
+            markNotificationAsRead(notificationId);
+        });
+        updateUnreadCount(); 
+    }
+
+    function toggleNotificationDetails(notification, id) {
+        const details = notification.querySelector('.notification-details');
+        const status = notification.querySelector('.notification-status');
+
+        if (openNotification && openNotification !== notification) {
+            openNotification.querySelector('.notification-details').style.display = 'none';
+            openNotification.querySelector('.notification-status').innerText = '';
+            openNotification.classList.remove('unread');
+        }
+
+        details.style.display = details.style.display === 'block' ? 'none' : 'block';
+        status.innerText = details.style.display === 'block' ? '' : '';
+
+        if (notification.classList.contains('unread')) {
+            notification.classList.remove('unread');
+            markNotificationAsRead(id);
+            updateUnreadCount(); 
+        }
+
+        openNotification = details.style.display === 'block' ? notification : null;
+    }
+
+    function updateUnreadCount() {
+        const unreadCountElement = document.getElementById('unreadCount');
+        const unreadNotifications = document.querySelectorAll('.notification.unread').length;
+        unreadCountElement.innerText = unreadNotifications;
+    }
+
+    function markNotificationAsRead(id) {
+        localStorage.setItem(`notification_${id}`, 'read');
+    }
+
+    updateUnreadCount();
+</script>
+<script>
+    function updateNotificationDot() {
+        const dot = document.getElementById('notificationDot');
+        const unreadNotifications = 2;
+        if (unreadNotifications > 0) {
+            dot.style.display = 'block';
+        } else {
+            dot.style.display = 'none';
+        }
+    }
+    function notificationsRead() {
+        updateNotificationDot(); 
+    }
+
+    updateNotificationDot();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

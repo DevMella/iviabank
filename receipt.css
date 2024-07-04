@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+.lag{
+    width: 100%;
+    justify-content: space-between;
+}
+.logo img{
+    width: 100px;
+}
+.lag h6{
+    font-weight: 600;
+    font-size: 20px;
+}
+.ball{
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+.ica{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: none;
+    background-color: #c8e0dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+}
+.car h6,.car h4,.line h6{
+    color: black;
+}
+.lie{
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    border: none;
+}
+.line h6{
+    width: 39%;
+    margin-top: -10px;
+}
+.line{
+    margin-top: 30px;
+}
+.car h4{
+    text-transform: uppercase;
+}
+.bin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.buttonDownload {
+    display: inline-block;
+    position: relative;
+    padding: 10px 25px;
+    background-color: white;
+    color: #54baac;
+    font-family: sans-serif;
+    text-decoration: none;
+    font-size: 1.em;
+    text-align: center;
+    text-indent: 15px;
+    border: none;
+    border-radius: 10px;
+   }
+   .buttonDownload:hover {
+    background-color: white;
+    color: #54baac;
+   }
+   .buttonDownload:before, .buttonDownload:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 52%;
+   }
+   .buttonDownload:before {
+    width: 10px;
+    height: 2px;
+    border-style: solid;
+    border-width: 0 2px 2px;
+   }
+   .buttonDownload:after {
+    width: 0;
+    height: 0;
+    margin-left: 3px;
+    margin-top: -7px;
+    border-style: solid;
+    border-width: 4px 4px 0 4px;
+    border-color: transparent;
+    border-top-color: inherit;
+    animation: downloadArrow 1s linear infinite;
+    animation-play-state: paused;
+   }
+   .buttonDownload:hover:before {
+    border-color: #cdefbd;
+   }
+   .buttonDownload:hover:after {
+    border-top-color: #cdefbd;
+    animation-play-state: running;
+   }
+   @keyframes downloadArrow {
+    0% {
+     margin-top: -7px;
+     opacity: 1;
+    }
+    0.001% {
+     margin-top: -15px;
+     opacity: 0.4;
+    }
+    50% {
+     opacity: 1;
+    }
+    100% {
+     margin-top: 0;
+     opacity: 0.4;
+    }
+   }
+@media (max-width:764px) {
+    .line h6{
+        width: 107%;
+        margin-top: -10px;
+        text-align: center;
+    }
+    .bola{
+        margin-top: 70px !important;
+    }
+    .ball{
+        margin-top: 30px !important;
+    }
+}
